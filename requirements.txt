@@ -1,0 +1,8 @@
+backports-abc==0.5
+certifi==2017.4.17
+pydemon==0.1.1
+singledispatch==3.4.0.3
+six==1.10.0
+SQLAlchemy==1.1.10
+SQLAlchemy-Paginator==0.1
+tornado==4.5.1
