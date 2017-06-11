@@ -5,7 +5,7 @@ from tornado.ioloop import IOLoop
 from sqlalchemy_paginator import Paginator
 from db import generate_meta, serialize_alchemy
 from model import DBSession
-from model.User import User
+from model.Word import Word
 
 
 class WordRepository(object):
@@ -19,7 +19,7 @@ class WordRepository(object):
 
     def get_word_by_id(self, user_id, callback=None):
         """
-        Get User By id 
+        Get Word By id 
         :param user_id: UUID-4 bd65600d-8669-4903-8a14-af88203add38
         :param callback: 
         :return: 
@@ -28,7 +28,7 @@ class WordRepository(object):
         result = None
 
         try:
-            result = session.query(User).filter(User.id == user_id).one()
+            result = session.query(Word).filter(Word.id == user_id).one()
             callback(result)
         except Exception as e:
             result = e
@@ -37,36 +37,37 @@ class WordRepository(object):
     def get_words(self, limit, page_number, callback=None):
         session = self.db_session
         result = None
+        word = Word()
         meta_obj = {}
         try:
-            query = session.query(User)
+            query = session.query(Word)
             paginator = Paginator(query, int(limit))
             page = paginator.page(int(page_number))
 
             result = self.serialize_alchemy(page.object_list)
 
             meta_obj = {"page": page_number,
-                       "limit": limit,
-                       "next_page": page.has_next() and page.next_page_number or None,
-                       "previous_page": page.has_previous() and page.previous_page_number or None,
-                       "page_count": paginator.total_pages,
-                       "total_count": paginator.count,
-                       "Links": generate_meta('user', limit, page_number, paginator.total_pages)}
+                        "limit": limit,
+                        "next_page": page.has_next() and page.next_page_number or None,
+                        "previous_page": page.has_previous() and page.previous_page_number or None,
+                        "page_count": paginator.total_pages,
+                        "total_count": paginator.count,
+                        "Links": generate_meta(type(word).__name__.lower(), limit, page_number, paginator.total_pages)}
         except Exception as e:
             result = []
         callback(result, meta_obj)
 
-    def create_word(self, user_orm, callback=None):
+    def create_word(self, word_model, callback=None):
         """
         Create a user in DB by passing user_orm
-        :param user_orm: 
+        :param word_model: 
         :param callback: 
         :return: 
         """
         session = self.db_session
         result = True
         try:
-            session.add(user_orm)
+            session.add(word_model)
             session.commit()
         except Exception as e:
             session.rollback()
@@ -74,18 +75,11 @@ class WordRepository(object):
         session.close()
         callback(result)
 
-    def bulk_insert(self):
+    def bulk_insert(self, word_list=[]):
         session = self.db_session
-        user_list = []
-        for x in range(0, 1000):
-            email_addr = str('user') + str(x + 1) + '@mail4u.com'
-            user_list.append(dict(id=str(uuid.uuid4().hex), name=str('User') + str(x + 1),
-                                  email=email_addr,
-                                  profile='http://placehold.it/350x150',
-                                  pass_code=str(uuid.uuid4().hex), address="Blk 453,Ang mo Kio,Singapore",
-                                  zipcode=str(uuid.uuid1().hex), nric_no=str(uuid.uuid1().hex), is_verified=False))
+        user_list = word_list
         try:
-            session.bulk_insert_mappings(User, user_list)
+            session.bulk_insert_mappings(Word, user_list)
             session.commit()
         except Exception as e:
             session.rollback()

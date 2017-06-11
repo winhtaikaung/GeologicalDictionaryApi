@@ -4,26 +4,20 @@ import json
 from model import Base
 
 
-class User(Base):
+class Word(Base):
     # id = sa.Column(sa.String(255), primary_key=True)
-    name = sa.Column(sa.String(255))
-    email = sa.Column(sa.String(255))
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
-    profile = sa.Column(sa.String(255))
-    nric_no = sa.Column(sa.String(255))
-    pass_code = sa.Column(sa.String(255))
-    address = sa.Column(sa.String(255))
-    zipcode = sa.Column(sa.String(255))
-    is_verified = sa.Column(sa.Boolean())
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
-                 'name': self.name,
-                 'email': self.email,
-                 'profile': self.profile,
-                 'nric_no': self.nric_no,
-                 'pass_code': self.pass_code,
-                 'address': self.address,
-                 'zipcode': self.zipcode,
-                 'is_verified': self.is_verified
+                 'word': self.word,
+                 'type': self.type,
+                 'meaning_zg': self.meaning_zg,
+                 'meaning_uni': self.meaning_uni,
+                 'remark': self.remark
                  })

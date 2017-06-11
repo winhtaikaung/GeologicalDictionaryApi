@@ -1,6 +1,6 @@
 from tornado.options import define, options
 
-define("db_connection_str", default="sqlite:///db_myShare.sqlite",
+define("db_connection_str", default="sqlite:///db_geodictionary.sqlite",
        help="Database connection string for application")  # db connection string
 from sqlalchemy import create_engine
 
