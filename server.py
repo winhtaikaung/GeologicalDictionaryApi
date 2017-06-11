@@ -3,6 +3,7 @@ import tornado.web
 
 from db import DBHelper
 from routes.WordRoute import word_routes
+from routes.DataFetchRoute import data_fetch_routes
 
 
 class MainHandler(tornado.web.RequestHandler):
@@ -10,7 +11,7 @@ class MainHandler(tornado.web.RequestHandler):
         pass
 
     def get(self):
-        #TODO generate Dummy data will be removed on production
+        # TODO generate Dummy data will be removed on production
         # user_repository = UserRepository.UserRepository()
         # user_repository.bulk_insert()
         self.write('Hi I Am Windy Tornado\n Avaliable Routes \n\
@@ -28,6 +29,7 @@ class Application(tornado.web.Application):
         }
         # This Method is to add all the routes from Route Package
         handlers.extend(word_routes)
+        handlers.extend(data_fetch_routes)
         tornado.web.Application.__init__(self, handlers, settings)
 
 

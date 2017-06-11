@@ -10,6 +10,7 @@ from utils import LOGGER
 
 NO_CONTENT_ERROR = 503
 INVALID_REQUEST = 400
+SUCCESS = 200
 
 
 class JSONEncoder(json.JSONEncoder):
