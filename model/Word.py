@@ -30,6 +30,7 @@ class A(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -47,6 +48,7 @@ class B(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -64,6 +66,7 @@ class C(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -75,6 +78,13 @@ class C(Base):
 
 
 class D(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -86,6 +96,13 @@ class D(Base):
 
 
 class E(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -97,6 +114,13 @@ class E(Base):
 
 
 class F(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -108,6 +132,13 @@ class F(Base):
 
 
 class G(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -119,6 +150,13 @@ class G(Base):
 
 
 class H(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -130,6 +168,13 @@ class H(Base):
 
 
 class I(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -141,6 +186,13 @@ class I(Base):
 
 
 class J(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -152,6 +204,13 @@ class J(Base):
 
 
 class K(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -163,6 +222,13 @@ class K(Base):
 
 
 class L(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -174,6 +240,13 @@ class L(Base):
 
 
 class M(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -185,6 +258,13 @@ class M(Base):
 
 
 class N(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -196,6 +276,13 @@ class N(Base):
 
 
 class O(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -207,6 +294,13 @@ class O(Base):
 
 
 class P(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -218,6 +312,13 @@ class P(Base):
 
 
 class Q(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -229,6 +330,13 @@ class Q(Base):
 
 
 class R(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -240,6 +348,13 @@ class R(Base):
 
 
 class S(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -251,6 +366,13 @@ class S(Base):
 
 
 class T(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -262,6 +384,13 @@ class T(Base):
 
 
 class U(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -273,6 +402,13 @@ class U(Base):
 
 
 class V(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -284,6 +420,13 @@ class V(Base):
 
 
 class W(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -295,6 +438,13 @@ class W(Base):
 
 
 class X(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -306,6 +456,13 @@ class X(Base):
 
 
 class Y(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
@@ -317,6 +474,13 @@ class Y(Base):
 
 
 class Z(Base):
+    word = sa.Column(sa.String(255))
+    type = sa.Column(sa.String(255))
+    # gender = sa.Column(sa.types.Enum("boy", "girl"))
+    meaning_zg = sa.Column(sa.String(255))
+    meaning_uni = sa.Column(sa.String(255))
+    remark = sa.Column(sa.String(255))
+
     def _get_val(self):  # serializing json
         return ({'id': self.id,
                  'word': self.word,
