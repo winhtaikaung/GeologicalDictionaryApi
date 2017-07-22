@@ -5,8 +5,8 @@ import tornado.web
 from tornado import gen
 from oauth2client.service_account import ServiceAccountCredentials
 from db import WordRepository
-from handlers.BaseHandler import BaseHandler, NO_CONTENT_ERROR, SUCCESS
-from model.User import User
+from handlers.BaseHandler import BaseHandler, NO_CONTENT_ERROR, SUCCESS, SERVER_ERROR
+from utils import DictUtils
 
 
 class DataFetchHandler(BaseHandler):
@@ -21,11 +21,14 @@ class DataFetchHandler(BaseHandler):
             scope = ['https://spreadsheets.google.com/feeds']
             credentials = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
             word_repository = WordRepository.WordRepository()
+            dict_utils = DictUtils.DictUtils()
+
             try:
                 gc = gspread.authorize(credentials)
                 sh = gc.open_by_key("1QeU3AoSghCAvYBD8kauC8oEZ0wA6j_gPj1pkvIY4MPU")
 
                 for ws_count, worksheets in enumerate(sh.worksheets()):
+
                     word_list = worksheets.col_values(1)
                     type_list = worksheets.col_values(2)
                     meaning_list = worksheets.col_values(3)
@@ -33,23 +36,24 @@ class DataFetchHandler(BaseHandler):
                     if ws_count < 26:
                         word_tuple_list = []
                         for i, (word, word_type, meaning) in enumerate(zip(word_list, type_list, meaning_list)):
+
                             if i > 0:
                                 if word != '':
-                                    word_tuple_list.append(dict(id=str(uuid.uuid1().hex), word=str(word),
-                                                                type=str(word_type),
+                                    word_tuple_list.append(dict(id=str(uuid.uuid1().hex), word=word,
+                                                                type=word_type,
                                                                 meaning_zg=meaning,
                                                                 meaning_uni=meaning))
                             else:
                                 pass
-
-                        word_repository.bulk_insert(word_tuple_list)
-
+                        word_repository.bulk_insert(word_tuple_list,
+                                                    dict_utils.get_model(str(worksheets.title).lower()))
                     else:
                         self.respond({}, NO_CONTENT_ERROR, code=SUCCESS)
 
             except Exception as ex:
                 print ex.message
-            self.respond({}, NO_CONTENT_ERROR, code=SUCCESS)
+                self.respond({}, ex.message, code=SERVER_ERROR)
+            self.respond({}, SUCCESS, code=SUCCESS)
 
         else:
             self.respond({}, NO_CONTENT_ERROR, code=NO_CONTENT_ERROR)
@@ -58,15 +62,4 @@ class DataFetchHandler(BaseHandler):
 @tornado.web.asynchronous
 @gen.engine
 def post(self, action):
-    user_repository = WordRepository.WordRepository()
-    user = User(id=str(uuid.uuid4().hex), name=self.get_body_argument("name"),
-                email=self.get_body_argument("email"),
-                profile=self.get_body_argument("profile"),
-                nric_no=self.get_body_argument("nricno"),
-                pass_code=self.get_body_argument("passcode"),
-                address=self.get_body_argument("address"),
-                zipcode=self.get_body_argument("zipcode"),
-                )
-
-    response = yield gen.Task(user_repository.create_user, user)
-    self.respond(response, 200)
+    self.respond({}, 200)

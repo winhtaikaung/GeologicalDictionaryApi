@@ -31,8 +31,9 @@ def generate_meta(table_view_name, limit, page, page_count):
 
 def serialize_alchemy(alchemy_object_list):
     user_dictionary = [];
-    fields = {}
+
     for row in alchemy_object_list:
+        fields = {}
         for field in [x for x in dir(row) if not x.startswith('_') and x != 'metadata' and x != 'query']:
             fields[field] = row.__getattribute__(field)
         user_dictionary.append(fields)

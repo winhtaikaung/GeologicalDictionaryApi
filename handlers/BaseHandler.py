@@ -10,6 +10,7 @@ from utils import LOGGER
 
 NO_CONTENT_ERROR = 503
 INVALID_REQUEST = 400
+SERVER_ERROR = 500
 SUCCESS = 200
 
 
@@ -21,6 +22,9 @@ class JSONEncoder(json.JSONEncoder):
 
 
 class BaseHandler(tornado.web.RequestHandler):
+    def data_received(self, chunk):
+        pass
+
     @tornado.web.asynchronous
     def post(self, action):
         try:

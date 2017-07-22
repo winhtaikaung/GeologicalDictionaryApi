@@ -57,6 +57,29 @@ class WordRepository(object):
             result = []
         callback(result, meta_obj)
 
+    def get_words_by_word_index(self, limit, page_number, model={}, callback=None):
+        session = self.db_session
+        result = None
+        word = Word()
+        meta_obj = {}
+        try:
+            query = session.query(model)
+            paginator = Paginator(query, int(limit))
+            page = paginator.page(int(page_number))
+
+            result = self.serialize_alchemy(page.object_list)
+
+            meta_obj = {"page": page_number,
+                        "limit": limit,
+                        "next_page": page.has_next() and page.next_page_number or None,
+                        "previous_page": page.has_previous() and page.previous_page_number or None,
+                        "page_count": paginator.total_pages,
+                        "total_count": paginator.count,
+                        "Links": generate_meta(type(word).__name__.lower(), limit, page_number, paginator.total_pages)}
+        except Exception as e:
+            result = []
+        callback(result, meta_obj)
+
     def create_word(self, word_model, callback=None):
         """
         Create a user in DB by passing user_orm
@@ -75,11 +98,11 @@ class WordRepository(object):
         session.close()
         callback(result)
 
-    def bulk_insert(self, word_list=[]):
+    def bulk_insert(self, word_list=[], model={}):
         session = self.db_session
         user_list = word_list
         try:
-            session.bulk_insert_mappings(Word, user_list)
+            session.bulk_insert_mappings(model, user_list)
             session.commit()
         except Exception as e:
             session.rollback()
