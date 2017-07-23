@@ -4,7 +4,6 @@ import tornado.web
 from tornado import gen
 from db import WordRepository
 from handlers.BaseHandler import BaseHandler, NO_CONTENT_ERROR
-from model.User import User
 
 from utils import DictUtils
 
