@@ -12,6 +12,7 @@ class Word(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -19,7 +20,8 @@ class Word(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -30,6 +32,7 @@ class A(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -37,7 +40,8 @@ class A(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -48,6 +52,7 @@ class B(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -55,7 +60,8 @@ class B(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -66,6 +72,7 @@ class C(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -73,7 +80,8 @@ class C(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -84,6 +92,7 @@ class D(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -91,7 +100,8 @@ class D(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -102,6 +112,7 @@ class E(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -109,7 +120,8 @@ class E(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -120,6 +132,7 @@ class F(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -127,7 +140,8 @@ class F(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -138,6 +152,7 @@ class G(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -145,7 +160,8 @@ class G(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -156,6 +172,7 @@ class H(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -163,7 +180,8 @@ class H(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -174,6 +192,7 @@ class I(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -181,7 +200,8 @@ class I(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -192,6 +212,7 @@ class J(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -199,7 +220,8 @@ class J(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -210,6 +232,7 @@ class K(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -217,7 +240,8 @@ class K(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -228,6 +252,7 @@ class L(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -235,7 +260,8 @@ class L(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -246,6 +272,7 @@ class M(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -253,7 +280,8 @@ class M(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -264,6 +292,7 @@ class N(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -271,7 +300,8 @@ class N(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -282,6 +312,7 @@ class O(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -289,7 +320,8 @@ class O(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -300,6 +332,7 @@ class P(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -307,7 +340,8 @@ class P(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -318,6 +352,7 @@ class Q(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -325,7 +360,8 @@ class Q(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -336,6 +372,7 @@ class R(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -343,7 +380,8 @@ class R(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -354,6 +392,7 @@ class S(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -361,7 +400,8 @@ class S(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -372,6 +412,7 @@ class T(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -379,7 +420,8 @@ class T(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -390,6 +432,7 @@ class U(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -397,7 +440,8 @@ class U(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -408,6 +452,7 @@ class V(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -415,7 +460,8 @@ class V(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -426,6 +472,7 @@ class W(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -433,7 +480,8 @@ class W(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -444,6 +492,7 @@ class X(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -451,7 +500,8 @@ class X(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -462,6 +512,7 @@ class Y(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -469,7 +520,8 @@ class Y(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
 
 
@@ -480,6 +532,7 @@ class Z(Base):
     meaning_zg = sa.Column(sa.String(255))
     meaning_uni = sa.Column(sa.String(255))
     remark = sa.Column(sa.String(255))
+    is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
         return ({'id': self.id,
@@ -487,5 +540,6 @@ class Z(Base):
                  'type': self.type,
                  'meaning_zg': self.meaning_zg,
                  'meaning_uni': self.meaning_uni,
-                 'remark': self.remark
+                 'remark': self.remark,
+                 'is_fav': self.is_fav
                  })
