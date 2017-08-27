@@ -2,8 +2,8 @@ from tornado.ioloop import IOLoop
 import tornado.web
 
 from db import DBHelper
-from routes.WordRoute import word_routes
-from routes.DataFetchRoute import data_fetch_routes
+from routes.word_route import word_routes
+from routes.data_fetch_route import data_fetch_routes
 
 
 class MainHandler(tornado.web.RequestHandler):

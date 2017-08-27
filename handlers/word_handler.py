@@ -2,10 +2,10 @@ import uuid
 
 import tornado.web
 from tornado import gen
-from db import WordRepository
-from handlers.BaseHandler import BaseHandler, NO_CONTENT_ERROR
+from db import word_repo
+from handlers.base_handler import BaseHandler, NO_CONTENT_ERROR
 
-from utils import DictUtils
+from utils import dict_utils
 
 
 class WordHandler(BaseHandler):
@@ -19,7 +19,7 @@ class WordHandler(BaseHandler):
 
         if self.get_query_arguments("id", True):
             id = self.get_argument("id", strip=True)
-            word_repository = WordRepository.WordRepository()
+            word_repository = word_repo.WordRepository()
             response = yield gen.Task(word_repository.get_word_by_id, str(id))
             if hasattr(response, '_get_val'):
                 self.respond(response._get_val(), 200)
@@ -28,10 +28,10 @@ class WordHandler(BaseHandler):
             word = self.get_argument("word", strip=True)
             limit = self.get_argument("limit", int(10), True)  # <--- get query_argement
             page = self.get_argument("page", int(1), True)
-            word_repository = WordRepository.WordRepository()
-            dict_utils = DictUtils.DictUtils()
+            word_repository = word_repo.WordRepository()
+            dict_util = dict_utils.DictUtils()
             response = yield gen.Task(word_repository.get_words_by_word_index, int(limit), int(page),
-                                      dict_utils.get_model(word))
+                                      dict_util.get_model(word))
             self.respond(response.args[0], response.args[1], 200)
 
     @tornado.web.asynchronous

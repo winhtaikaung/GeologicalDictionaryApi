@@ -4,9 +4,9 @@ import tornado.web
 
 from tornado import gen
 from oauth2client.service_account import ServiceAccountCredentials
-from db import WordRepository
-from handlers.BaseHandler import BaseHandler, NO_CONTENT_ERROR, SUCCESS, SERVER_ERROR
-from utils import DictUtils
+from db import word_repo
+from handlers.base_handler import BaseHandler, NO_CONTENT_ERROR, SUCCESS, SERVER_ERROR
+from utils import dict_utils
 
 
 class DataFetchHandler(BaseHandler):
@@ -20,8 +20,8 @@ class DataFetchHandler(BaseHandler):
         if self.get_argument("fetch", True):
             scope = ['https://spreadsheets.google.com/feeds']
             credentials = ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
-            word_repository = WordRepository.WordRepository()
-            dict_utils = DictUtils.DictUtils()
+            word_repository = word_repo.WordRepository()
+            dict_util = dict_utils.DictUtils()
 
             try:
                 gc = gspread.authorize(credentials)
@@ -46,7 +46,7 @@ class DataFetchHandler(BaseHandler):
                             else:
                                 pass
                         word_repository.bulk_insert(word_tuple_list,
-                                                    dict_utils.get_model(str(worksheets.title).lower()))
+                                                    dict_util.get_model(str(worksheets.title).lower()))
                     else:
                         self.respond({}, NO_CONTENT_ERROR, code=SUCCESS)
 
