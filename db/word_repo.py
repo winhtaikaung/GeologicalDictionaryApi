@@ -5,7 +5,7 @@ from tornado.ioloop import IOLoop
 from sqlalchemy_paginator import Paginator
 from db import generate_meta, serialize_alchemy
 from model import DBSession
-from model.Word import Word
+from model.word_entity import Word
 
 
 class WordRepository(object):
