@@ -48,10 +48,12 @@ class BaseHandler(tornado.web.RequestHandler):
 
     def respond(self, data, metadata, code=200):
         self.set_status(code)
+
         self.write(JSONEncoder().encode({
 
             "data": data,
             "meta_data": metadata,
             # "status": code,
         }))
+        self.set_header("Content-Type", "application/json")
         self.finish()
