@@ -15,7 +15,6 @@ oauth2client==4.1.1
 pyasn1==0.2.3
 pyasn1-modules==0.0.9
 pycparser==2.17
-pydemon==0.1.1
 pyOpenSSL==17.0.0
 requests==2.17.3
 rsa==3.4.2
