@@ -11,7 +11,7 @@ class Word(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -31,7 +31,7 @@ class A(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -51,7 +51,7 @@ class B(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -71,7 +71,7 @@ class C(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -91,7 +91,7 @@ class D(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -111,7 +111,7 @@ class E(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -131,7 +131,7 @@ class F(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -151,7 +151,7 @@ class G(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -171,7 +171,7 @@ class H(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -191,7 +191,7 @@ class I(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -211,7 +211,7 @@ class J(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -231,7 +231,7 @@ class K(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -251,7 +251,7 @@ class L(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -271,7 +271,7 @@ class M(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -291,7 +291,7 @@ class N(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -311,7 +311,7 @@ class O(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -331,7 +331,7 @@ class P(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -351,7 +351,7 @@ class Q(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -371,7 +371,7 @@ class R(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -391,7 +391,7 @@ class S(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -411,7 +411,7 @@ class T(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -431,7 +431,7 @@ class U(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -451,7 +451,7 @@ class V(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -471,7 +471,7 @@ class W(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -491,7 +491,7 @@ class X(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -511,7 +511,7 @@ class Y(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json
@@ -531,7 +531,7 @@ class Z(Base):
     # gender = sa.Column(sa.types.Enum("boy", "girl"))
     meaning_zg = sa.Column(sa.String(3000))
     meaning_uni = sa.Column(sa.String(3000))
-    remark = sa.Column(sa.String(3000))
+    remark = sa.Column(sa.String(3000), default="")
     is_fav = sa.Column(sa.Boolean, default=False)
 
     def _get_val(self):  # serializing json

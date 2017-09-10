@@ -11,8 +11,8 @@ url = 'postgresql://{}:{}@{}:{}/{}'
 url = url.format(os.environ["DB_USER_NAME"], os.environ["DB_PASSWORD"], os.environ["DB_HOST"], os.environ["DB_PORT"],
                  os.environ["DB_NAME"])
 
-# db_engine = create_engine(options.db_connection_str)
-db_engine = create_engine(url, client_encoding='utf8')
+db_engine = create_engine(options.db_connection_str)
+# db_engine = create_engine(url, client_encoding='utf8')
 
 
 def generate_meta(table_view_name, limit, page, page_count):

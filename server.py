@@ -1,5 +1,6 @@
 from tornado.ioloop import IOLoop
 import tornado.web
+import tornado.options
 
 from db import DBHelper
 from routes.word_route import word_routes
@@ -31,6 +32,7 @@ class Application(tornado.web.Application):
         handlers.extend(word_routes)
         handlers.extend(data_fetch_routes)
         tornado.web.Application.__init__(self, handlers, settings)
+        tornado.options.parse_command_line()
 
 
 def main():

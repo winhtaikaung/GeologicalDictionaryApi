@@ -31,7 +31,7 @@ class WordHandler(BaseHandler):
             word_repository = word_repo.WordRepository()
             dict_util = dict_utils.DictUtils()
             response = yield gen.Task(word_repository.get_words_by_word_index, int(limit), int(page),
-                                      dict_util.get_model(word))
+                                      dict_util.get_model(str(word).lower()))
             self.respond(response.args[0], response.args[1], 200)
 
     @tornado.web.asynchronous
