@@ -1,10 +1,8 @@
-import uuid
-
 import tornado.web
 from tornado import gen
+
 from db import word_repo
 from handlers.base_handler import BaseHandler, NO_CONTENT_ERROR
-
 from utils import dict_utils
 
 

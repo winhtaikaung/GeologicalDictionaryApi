@@ -1,8 +1,6 @@
-import collections
-import uuid
-
-from tornado.ioloop import IOLoop
 from sqlalchemy_paginator import Paginator
+from tornado.ioloop import IOLoop
+
 from db import generate_meta, serialize_alchemy
 from model import DBSession
 from model.word_entity import Word

@@ -1,5 +1,4 @@
 import sqlalchemy as sa
-import json
 
 from model import Base
 
