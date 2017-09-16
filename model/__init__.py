@@ -1,6 +1,6 @@
-import sqlalchemy as sa
 import uuid as uuid
 
+import sqlalchemy as sa
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.ext.declarative import declared_attr
 from sqlalchemy.orm import scoped_session, sessionmaker

@@ -1,10 +1,11 @@
-from tornado.ioloop import IOLoop
-import tornado.web
 import tornado.options
+import tornado.web
+from tornado.ioloop import IOLoop
 
 from db import DBHelper
-from routes.word_route import word_routes
+from routes.api_config_route import api_config_route
 from routes.data_fetch_route import data_fetch_routes
+from routes.word_route import word_routes
 
 
 class MainHandler(tornado.web.RequestHandler):
@@ -31,6 +32,7 @@ class Application(tornado.web.Application):
         # This Method is to add all the routes from Route Package
         handlers.extend(word_routes)
         handlers.extend(data_fetch_routes)
+        handlers.extend(api_config_route)
         tornado.web.Application.__init__(self, handlers, settings)
         tornado.options.parse_command_line()
 

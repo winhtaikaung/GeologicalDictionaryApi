@@ -1,10 +1,12 @@
 """
 Indico Request/Response Utils
 """
-import json, urlparse, logging
+import json
+import logging
+import urlparse
 
-from error import MissingField, InvalidJSON, MongoError
 from error import CustomError, WrongFieldType
+from error import MissingField, InvalidJSON, MongoError
 
 LOGGER = logging.getLogger("indico")
 

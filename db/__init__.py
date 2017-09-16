@@ -1,4 +1,5 @@
 import os
+
 from tornado.options import define, options
 
 define("db_connection_str", default="sqlite:///db_geodictionary.sqlite",
@@ -12,6 +13,8 @@ url = url.format(os.environ["DB_USER_NAME"], os.environ["DB_PASSWORD"], os.envir
                  os.environ["DB_NAME"])
 
 db_engine = create_engine(options.db_connection_str)
+
+
 # db_engine = create_engine(url, client_encoding='utf8')
 
 
