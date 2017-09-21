@@ -26,6 +26,8 @@ class APIConfigHandler(BaseHandler):
             response = yield gen.Task(word_repository.get_words_by_word_index, int(limit), int(page),
                                       dict_util.get_model(str(char).lower()))
             result.append(dict(wordIndex=char, page_count=response.args[1].get('page_count')))
+
+        result.append(dict(wordIndex="last", page_count=1))
         self.respond({"config": result}, {}, 200)
 
     @tornado.web.asynchronous
