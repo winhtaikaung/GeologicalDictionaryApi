@@ -3,6 +3,7 @@ Indico Request Handler
 """
 import json
 import traceback
+from xmlrpclib import DateTime
 
 import tornado.web
 
@@ -57,7 +58,7 @@ class BaseHandler(tornado.web.RequestHandler):
             # "status": code,
         }))
         now = DateTime()
-        then = now+int(hours/24.0)
+        then = now+int(10/24.0)
         self.set_header("Expires", then.rfc822())
         self.set_header("Content-Type", "application/json")
         self.set_header('Cache-Control', 'public,max-age=%d' % int(3600*10))
