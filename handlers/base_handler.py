@@ -56,7 +56,7 @@ class BaseHandler(tornado.web.RequestHandler):
             "meta_data": metadata,
             # "status": code,
         }))
-        self.set_header("Expires", 300)
+        self.set_header("Expires", 12000)
         self.set_header("Content-Type", "application/json")
         self.set_header('Cache-Control', 'public,max-age=%d' % int(1200 * 10))
         self.finish()
