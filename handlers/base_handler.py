@@ -1,7 +1,8 @@
 """
 Indico Request Handler
 """
-import json, traceback
+import json
+import traceback
 
 import tornado.web
 
@@ -48,10 +49,14 @@ class BaseHandler(tornado.web.RequestHandler):
 
     def respond(self, data, metadata, code=200):
         self.set_status(code)
+
         self.write(JSONEncoder().encode({
 
             "data": data,
             "meta_data": metadata,
             # "status": code,
         }))
+        self.set_header("Expires", 12000)
+        self.set_header("Content-Type", "application/json")
+        self.set_header('Cache-Control', 'public,max-age=%d' % int(1200 * 10))
         self.finish()

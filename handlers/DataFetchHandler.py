@@ -4,9 +4,10 @@ import tornado.web
 
 from tornado import gen
 from oauth2client.service_account import ServiceAccountCredentials
-from db import WordRepository
-from handlers.BaseHandler import BaseHandler, NO_CONTENT_ERROR, SUCCESS, SERVER_ERROR
-from utils import DictUtils
+
+from db.word_repo import WordRepository
+from handlers.base_handler import BaseHandler, SUCCESS, SERVER_ERROR, NO_CONTENT_ERROR
+from utils.dict_utils import DictUtils
 
 
 class DataFetchHandler(BaseHandler):

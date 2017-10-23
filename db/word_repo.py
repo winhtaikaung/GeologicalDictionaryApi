@@ -1,11 +1,9 @@
-import collections
-import uuid
-
-from tornado.ioloop import IOLoop
 from sqlalchemy_paginator import Paginator
+from tornado.ioloop import IOLoop
+
 from db import generate_meta, serialize_alchemy
 from model import DBSession
-from model.Word import Word
+from model.word_entity import Word
 
 
 class WordRepository(object):
@@ -68,12 +66,14 @@ class WordRepository(object):
             page = paginator.page(int(page_number))
 
             result = self.serialize_alchemy(page.object_list)
-
+            total_pages = 0
+            if paginator.total_pages != 1 :
+                total_pages = paginator.total_pages
             meta_obj = {"page": page_number,
                         "limit": limit,
                         "next_page": page.has_next() and page.next_page_number or None,
                         "previous_page": page.has_previous() and page.previous_page_number or None,
-                        "page_count": paginator.total_pages,
+                        "page_count":total_pages,
                         "total_count": paginator.count,
                         "Links": generate_meta(type(word).__name__.lower(), limit, page_number, paginator.total_pages)}
         except Exception as e:
