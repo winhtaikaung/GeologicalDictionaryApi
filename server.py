@@ -1,3 +1,5 @@
+import os
+
 import tornado.options
 import tornado.web
 from tornado.ioloop import IOLoop
@@ -38,9 +40,10 @@ class Application(tornado.web.Application):
 
 
 def main():
-    DBHelper().genschema()
+
     app = Application()
-    app.listen(3000)
+    DBHelper().genschema()
+    app.listen(os.getenv("PORT",3000))
     IOLoop.instance().start()
 
 

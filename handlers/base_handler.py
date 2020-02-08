@@ -7,7 +7,7 @@ import traceback
 import tornado.web
 
 from error import CustomError, RouteNotFound, ServerError
-from utils import LOGGER
+
 
 NO_CONTENT_ERROR = 503
 INVALID_REQUEST = 400
@@ -39,11 +39,7 @@ class BaseHandler(tornado.web.RequestHandler):
         except CustomError as e:
             self.respond(e.message, e.code)
         except Exception as e:
-            LOGGER.error(
-                "\n\n======== KiloShare SERVER ERROR ========\n%s\n%s\n",
-                __file__,
-                traceback.format_exc()
-            )
+
             error = ServerError()
             self.respond(error.message, error.code)
 
