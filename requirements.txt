@@ -3,7 +3,6 @@ backports-abc==0.5
 certifi==2017.4.17
 cffi==1.10.0
 chardet==3.0.4
-cryptography==1.9
 enum==0.4.6
 enum34==1.1.6
 google-api-python-client==1.6.2
@@ -24,5 +23,5 @@ six==1.10.0
 SQLAlchemy==1.1.10
 SQLAlchemy-Paginator==0.1
 tornado==4.5.1
-uritemplate==3.0.0
+
 
